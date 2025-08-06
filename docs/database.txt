@@ -1,0 +1,10 @@
+Blog
+    - title
+    - description
+    - author
+    - time_to_read
+    - timestamp
+    - cover_image
+    - cover_image_caption
+    - blog_body
+    - blog_tag

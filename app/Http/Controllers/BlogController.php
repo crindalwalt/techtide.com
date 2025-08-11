@@ -8,6 +8,10 @@ use App\Models\Blog;
 
 class BlogController extends Controller
 {
+
+    public function dashboard (){
+        return view('admin.dashboard');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -25,7 +29,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.blog.create");
     }
 
     /**

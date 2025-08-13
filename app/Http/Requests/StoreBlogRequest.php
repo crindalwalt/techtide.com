@@ -11,7 +11,7 @@ class StoreBlogRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class StoreBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required'],
+            'description' => ['required'],
+            'blog_body' => ['required'],
+            'tags' => ['required'],
+            'time_to_read' => ['required'],
+            'cover_image_caption' =>  ['required'],
+            'user_id' => ['required'],
+            'cover_image' => ['required']
+
         ];
     }
 }

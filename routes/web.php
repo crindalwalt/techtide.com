@@ -15,7 +15,7 @@ Route::get("/blog-detail",[HomeController::class,"show"])->name("blog.detail");
 Route::get('/dashboard', [BlogController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/dashboard/blog',[BlogController::class,'index'])->middleware(['auth', 'verified'])->name('admin.blog.list');
 Route::get("/dashboard/blog/create",[BlogController::class,'create'])->middleware(['auth', 'verified'])->name("admin.blog.create");
-
+Route::post("/dashboard/blog/store",[BlogController::class,'store'])->middleware(['auth','verified'])->name("admin.blog.store");
 
 
 

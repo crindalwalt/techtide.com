@@ -37,7 +37,10 @@ class BlogController extends Controller
      */
     public function store(StoreBlogRequest $request)
     {
-        //
+        // check if the data is coming or not
+        // dd($request->all());
+        return "form is getting submited";
+
     }
 
     /**

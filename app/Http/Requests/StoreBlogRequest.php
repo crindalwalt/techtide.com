@@ -21,6 +21,7 @@ class StoreBlogRequest extends FormRequest
      */
     public function rules(): array
     {
+        // blog data is validated here
         return [
             'title' => ['required'],
             'description' => ['required'],

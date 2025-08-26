@@ -136,7 +136,7 @@
                             <span>By {{ $item->user_id }}</span>
                             <span>{{ $item->created_at->diffForHumans() }}</span>
                         </div>
-                        <a href="{{ route("blog.detail") }}"
+                        <a href="{{ route("blog.detail",$item->id) }}"
                             class="inline-block text-indigo-600 hover:text-indigo-800 font-medium rounded-md py-2 px-4 border border-indigo-600 hover:border-indigo-800 transition-colors">Read
                             More</a>
                     </article>

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 # user site routes
 Route::get("/",[HomeController::class,'index'])->name("home");
-Route::get("/blog-detail",[HomeController::class,"show"])->name("blog.detail");
+Route::get("/blog/{blog}",[HomeController::class,"show"])->name("blog.detail");
 
 
 

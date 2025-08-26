@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index()
     {
         // retrieve data from database
-        $blogs = Blog::all();
+        $blogs = Blog::latest()->get();
 
         // send to the blade file
         return view("blog.index", [
@@ -19,8 +19,11 @@ class HomeController extends Controller
     }
 
 
-    public function show()
+    public function show(Blog $blog)
     {
-        return view("blog.show");
+
+        return view("blog.show", [
+            'blog' => $blog,
+        ]);
     }
 }

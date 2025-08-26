@@ -71,56 +71,37 @@
         <!-- Post Header -->
         <header class="mb-8 text-center">
             <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-4 rounded-md">
-                The Rise of Generative AI: What's Next?
+                {{ $blog->title }}
             </h1>
             <div class="text-gray-600 text-sm flex justify-center items-center space-x-2">
-                <span>By <span class="font-semibold text-indigo-600">Jane Doe</span></span>
+                <span>By <span class="font-semibold text-indigo-600">{{ $blog->user_id }}</span></span>
                 <span class="text-gray-400">&bull;</span>
-                <span>July 28, 2025</span>
+                <span>{{ $blog->created_at->diffForHumans() }}</span>
                 <span class="text-gray-400">&bull;</span>
-                <span>8 min read</span>
+                <span>{{ $blog->time_to_read }} min read</span>
             </div>
         </header>
 
         <!-- Post Hero Image -->
         <figure class="mb-8">
-            <img src="https://placehold.co/1200x600/D1D5DB/4B5563?text=Generative+AI+Future" alt="Generative AI transforming industries" class="w-full h-auto object-cover rounded-lg shadow-lg border border-gray-300">
+            <img src="{{ asset($blog->cover_image) }}" alt="Generative AI transforming industries" class="w-full h-auto object-cover rounded-lg shadow-lg border border-gray-300">
             <figcaption class="text-center text-gray-500 text-sm mt-2">
-                Generative AI models are rapidly evolving, creating new possibilities across various sectors.
+                {{ $blog->cover_image_caption }}
             </figcaption>
         </figure>
 
         <!-- Post Body Content -->
         <article class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
             <p class="mb-4">
-                In recent years, generative artificial intelligence has moved from the realm of science fiction to a tangible reality, reshaping industries and redefining creative boundaries. From generating realistic images and compelling text to composing music and designing complex structures, AI's ability to create novel content is nothing short of revolutionary.
+                {{ $blog->blog_body }}
             </p>
-            <p class="mb-4">
-                The core of generative AI lies in its capacity to learn patterns and structures from vast datasets and then produce new data that mimics those characteristics. Models like Generative Adversarial Networks (GANs) and Transformers have been at the forefront of this revolution, pushing the limits of what machines can achieve creatively.
-            </p>
-            <h2 class="text-2xl font-bold text-gray-900 mt-6 mb-4 rounded-md">Impact Across Industries</h2>
-            <p class="mb-4">
-                The implications of generative AI are far-reaching. In **art and design**, it's enabling artists to experiment with new styles and generate unique visual assets at an unprecedented pace. Architects are using it to design optimized building layouts, while fashion designers are exploring AI-generated apparel concepts.
-            </p>
-            <p class="mb-4">
-                For **content creation**, generative AI is a game-changer. Journalists can use it to draft initial reports, marketers to create personalized ad copy, and screenwriters to brainstorm plot ideas. While human oversight remains crucial for quality and ethical considerations, the efficiency gains are undeniable.
-            </p>
-            <p class="mb-4">
-                Even in **scientific research and development**, generative AI is proving invaluable. It can accelerate drug discovery by proposing new molecular structures, optimize material design, and even assist in generating synthetic data for training other AI models, overcoming data scarcity challenges.
-            </p>
-            <h2 class="text-2xl font-bold text-gray-900 mt-6 mb-4 rounded-md">Ethical Considerations and the Road Ahead</h2>
-            <p class="mb-4">
-                As with any powerful technology, generative AI comes with its share of ethical dilemmas. Concerns around deepfakes, copyright infringement, and the potential for job displacement are valid and require careful consideration. Developing robust ethical guidelines and regulatory frameworks will be paramount to ensuring responsible deployment.
-            </p>
-            <p class="mb-4">
-                Looking ahead, we can expect generative AI models to become even more sophisticated, capable of understanding context and nuance with greater precision. Integration with other AI disciplines, such as reinforcement learning, could unlock new levels of creativity and problem-solving. The future of generative AI is not just about what machines can create, but how they can augment human ingenuity and collaboration. It's an exciting frontier, and techtide.com will continue to bring you the latest insights as it unfolds.
-            </p>
+
         </article>
 
         <!-- Post Tags -->
         <div class="mt-8 pt-4 border-t border-gray-200">
             <span class="text-gray-600 font-semibold mr-2">Tags:</span>
-            <a href="#" class="inline-block bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-indigo-200 transition-colors mr-2 mb-2">AI</a>
+            <a href="#" class="inline-block bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-indigo-200 transition-colors mr-2 mb-2">{{ $blog->tags }}</a>
             <a href="#" class="inline-block bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-indigo-200 transition-colors mr-2 mb-2">Generative AI</a>
             <a href="#" class="inline-block bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full hover:bg-indigo-200 transition-colors mb-2">Future Tech</a>
         </div>
